@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+.site-header {
+    background: linear-gradient(135deg, #1f2937, #374151);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.site-header .logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.site-header .cart-link {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.15);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 15px;
+    transition: background-color 0.15s ease;
+}
+
+.site-header .cart-link:hover {
+    background-color: rgba(255,255,255,0.3);
+}
+
+/* Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px 20px 60px 20px;
+}
+
+.page-title {
+    font-size: 26px;
+    color: #1f2937;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #f97316;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Book grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.book-tile {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.book-tile img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.book-tile-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.book-tile h2 {
+    font-size: 17px;
+    margin: 0 0 5px 0;
+}
+
+.book-tile h2 a {
+    color: #1f2937;
+    text-decoration: none;
+}
+
+.book-tile h2 a:hover {
+    color: #f97316;
+}
+
+.book-author {
+    color: #888;
+    font-style: italic;
+    font-size: 14px;
+    margin: 0 0 10px 0;
+}
+
+.book-price {
+    display: inline-block;
+    font-weight: bold;
+    color: #16a34a;
+    font-size: 17px;
+    background-color: #eafaf1;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.btn {
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin-top: auto;
+}
+
+.btn-primary {
+    background-color: #f97316;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #ea6a0c;
+}
+
+.btn-secondary {
+    background-color: #e5e7eb;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #d1d5db;
+}
+
+/* Book detail page */
+.book-detail-panel {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    gap: 25px;
+}
+
+.book-detail-panel img {
+    width: 220px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.book-detail-info h2 {
+    margin-top: 0;
+}
+
+.book-stock {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Cart page */
+.cart-item {
+    background: white;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 17px;
+}
+
+.cart-item-info p {
+    margin: 2px 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 22px;
+    font-weight: bold;
+    color: #1f2937;
+    margin: 20px 0;
+}
+
+.empty-message {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    color: #888;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}

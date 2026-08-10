@@ -1,0 +1,19 @@
+{% extends 'store/base.html' %}
+{% block title %}{{ book.title }}{% endblock %}
+{% block content %}
+    <div class="book-detail-panel">
+        {% if book.cover_image %}
+            <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+        {% endif %}
+        <div class="book-detail-info">
+            <h2>{{ book.title }}</h2>
+            <p class="book-author">by {{ book.author }}</p>
+            <p class="book-price">${{ book.price }}</p>
+            <p>{{ book.description }}</p>
+            <p class="book-stock">In stock: {{ book.stock }}</p>
+            <a class="btn btn-primary" href="{% url 'cart_add' book.pk %}">Add to Cart</a>
+            <br><br>
+            <a class="btn btn-secondary" href="{% url 'book_list' %}">← Continue shopping</a>
+        </div>
+    </div>
+{% endblock %}

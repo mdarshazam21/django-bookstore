@@ -1,0 +1,23 @@
+{% extends 'store/base.html' %}
+{% block title %}Checkout{% endblock %}
+{% block content %}
+<h2 class="page-title">Checkout</h2>
+
+<div class="book-detail-panel" style="flex-direction: column;">
+    <h3>Order Summary</h3>
+    {% for item in cart %}
+    <p>{{ item.quantity }} × {{ item.book.title }} — ${{ item.total_price }}</p>
+    {% endfor %}
+    <p class="cart-total">Total: ${{ cart.get_total_price|floatformat:2 }}</p>
+</div>
+
+<br>
+
+<div class="book-detail-panel" style="flex-direction: column;">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Place Order</button>
+    </form>
+</div>
+{% endblock %}

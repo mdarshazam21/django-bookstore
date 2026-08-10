@@ -1,0 +1,22 @@
+{% load static %}
+{% load cart_tags %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{% block title %}Online Bookstore{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'store/style.css' %}">
+</head>
+
+<body>
+    <div class="site-header">
+        <a class="logo" href="{% url 'book_list' %}">📚 Online Bookstore</a>
+        <a class="cart-link" href="{% url 'cart_detail' %}">🛒 Cart ({% cart_item_count %})</a>
+    </div>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+
+</html>
