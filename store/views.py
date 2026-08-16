@@ -6,7 +6,7 @@ from .models import OrderItem
 from django.contrib.auth.decorators import login_required
 from .models import Order
 
-# Create your views here.
+# Create your views here.ur
 
 
 def book_list(request):
@@ -62,8 +62,9 @@ def order_create(request):
         form = OrderCreateForm()
     return render(request, "store/order_create.html", {"cart": cart, "form": form})
 
+
 @login_required
 def order_history(request):
-    orders = Order.objects.filter(user=request.user).order_by('-created_at')
-    context = {'orders': orders}
-    return render(request, 'store/order_history.html', context)
+    orders = Order.objects.filter(user=request.user).order_by("-created_at")
+    context = {"orders": orders}
+    return render(request, "store/order_history.html", context)

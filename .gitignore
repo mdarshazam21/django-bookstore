@@ -3,5 +3,7 @@ __pycache__/
 *.pyc
 db.sqlite3
 media/
-book_covers/
+.env
 .vscode/
+.idea/
+Thumbs.db
